@@ -1,8 +1,8 @@
 # Tool Learning Log
 
-## Tool: **X**
+## Tool: **React**
 
-## Project: **X**
+## Project: **To-do list**
 
 ---
 
