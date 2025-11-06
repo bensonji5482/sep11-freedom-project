@@ -43,6 +43,35 @@ const toggleTodo = (id) => {
 * Uses `.map()` to create a **new array** where only the matched todo is updated.
 * Again, uses spread syntax (`{ ...todo, completed: !todo.completed }`) to ensure immutability.
 
+### 11/6/2025 Day 3
+```js
+useEffect(() => {
+  const savedTodos = localStorage.getItem('todos');
+  if (savedTodos) {
+    setTodos(JSON.parse(savedTodos));
+  }
+}, []);
+```
+* Runs only once when the component first loads (because of the empty dependency array `[]`).
+* Looks in the browser’s `localStorage` for saved todos.
+* If found, it loads them into the `todos` state using `setTodos`.
+* This makes todos persist between page reloads.
+```js
+useEffect(() => {
+  localStorage.setItem('todos', JSON.stringify(todos));
+}, [todos]);
+```
+* Runs every time `todos` changes.
+* Saves the current `todos` array into `localStorage`.
+* Keeps your list synced with the browser’s storage.
+```js
+useEffect(() => {
+  document.title = `Todos: ${todos.filter(t => !t.completed).length} remaining`;
+}, [todos]);
+```
+* Runs every time `todos` changes.
+* Counts how many todos aren’t completed (`!t.completed`).
+* Updates the browser tab’s title (e.g. “Todos: 3 remaining”).
 
 <!-- 
 * Links you used today (websites, videos, etc)
