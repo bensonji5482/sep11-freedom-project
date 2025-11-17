@@ -43,7 +43,7 @@ const toggleTodo = (id) => {
 * Uses `.map()` to create a **new array** where only the matched todo is updated.
 * Again, uses spread syntax (`{ ...todo, completed: !todo.completed }`) to ensure immutability.
 
-### 11/6/2025 Day 3
+### 11/10/2025 Day 3
 ```js
 useEffect(() => {
   const savedTodos = localStorage.getItem('todos');
@@ -72,6 +72,94 @@ useEffect(() => {
 * Runs every time `todos` changes.
 * Counts how many todos aren’t completed (`!t.completed`).
 * Updates the browser tab’s title (e.g. “Todos: 3 remaining”).
+
+### 11/17/2025 Day 4
+`const [inputText, setInputText] = useState('');`
+* Creates a state variable called **inputText** to store what the user types.
+* `setInputText` updates that text.
+```js
+const handleInputChange = (event) => {
+  setInputText(event.target.value);
+};
+```
+* Runs **every time the user types** in the box.
+* Updates the state with the current input value.
+```js
+const handleSubmit = (event) => {
+  event.preventDefault(); // stops page reload
+  if (inputText.trim()) {
+    addTodo();
+  }
+};
+```
+* Prevents the form from refreshing the page.
+* Checks if the input isn’t empty.
+* Calls `addTodo()` — presumably a function that adds the todo to a list.
+* ⚠️ **Important:** `addTodo()` isn’t defined here — it must be passed in as a prop or created elsewhere.
+```js
+const handleKeyPress = (event) => {
+  if (event.key === 'Enter') {
+    handleSubmit(event);
+  }
+};
+```
+* Detects when the user presses **Enter** inside the input.
+* Makes Enter behave exactly like clicking the Add button.
+```js
+<form onSubmit={handleSubmit}>
+  <input
+    type="text"
+    value={inputText}
+    onChange={handleInputChange}
+    onKeyPress={handleKeyPress}
+    placeholder="Add a todo..."
+  />
+  <button type="submit">Add</button>
+</form>
+```
+* A form with:
+   * A controlled input field (it uses React state for its value)
+   * An "Add" button
+* Submitting works by:
+   * Pressing Enter
+   * Clicking the button
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- 
 * Links you used today (websites, videos, etc)
