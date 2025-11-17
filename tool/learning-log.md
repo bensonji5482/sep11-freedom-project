@@ -74,7 +74,9 @@ useEffect(() => {
 * Updates the browser tab’s title (e.g. “Todos: 3 remaining”).
 
 ### 11/17/2025 Day 4
-`const [inputText, setInputText] = useState('');`
+```js
+const [inputText, setInputText] = useState('');
+```
 * Creates a state variable called **inputText** to store what the user types.
 * `setInputText` updates that text.
 ```js
