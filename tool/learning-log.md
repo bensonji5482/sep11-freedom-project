@@ -126,8 +126,60 @@ const handleKeyPress = (event) => {
    * Pressing Enter
    * Clicking the button
 
-
-
+### 12/1/2025: Day 5
+The parent component renders a list of TodoItem components
+```js
+<TodoItem 
+  key={todo.id}
+  todo={todo}
+  onToggle={toggleTodo}
+  onDelete={deleteTodo}
+/>
+```
+* For each `todo` in the list, the parent creates a `<TodoItem />`.
+* It passes:
+  * the actual todo data (`todo`)
+  * a function to toggle it (`toggleTodo`)
+  * a function to delete it (`deleteTodo`)
+The child component displays a single todo
+```js
+const TodoItem = ({ todo, onToggle, onDelete }) => {
+  return (
+    <div className={`todo-item ${todo.completed ? 'completed' : ''}`}>
+      <input
+        type="checkbox"
+        checked={todo.completed}
+        onChange={() => onToggle(todo.id)}
+      />
+      <span>{todo.text}</span>
+      <button onClick={() => onDelete(todo.id)}>Delete</button>
+    </div>
+  );
+};
+```
+* Inside the child:
+* Shows the todo text
+  * The `<span>` displays whatever text is stored in `todo.text`.
+* Shows whether it's completed
+* The checkbox uses:
+```js
+checked={todo.completed}
+```
+So it automatically reflects the todo’s current state.
+* Calls back to the parent when the checkbox changes
+* When the user clicks the checkbox:
+```js
+onToggle(todo.id)
+```
+This tells the parent which todo to toggle.
+* Calls back to the parent when the Delete button is clicked
+```js
+onDelete(todo.id)
+```
+This tells the parent to delete that todo.
+The child NEVER changes state itself
+It only displays info and triggers events.
+The parent updates the actual list of todos.
 
 
 
