@@ -181,8 +181,34 @@ The child NEVER changes state itself
 It only displays info and triggers events.
 The parent updates the actual list of todos.
 
+### 12/8/2025: Day 6
+```js
+{todos.map(todo => (
+  <TodoItem
+    key={todo.id} // Helps React identify which items changed
+    todo={todo}
+    onToggle={toggleTodo}
+  />
+))}
+```
+`todos.map(...)`
+* This is looping over an array called `todos`.
+* For each `todo` in the array, it creates a `<TodoItem>` component.
 
+`<TodoItem ... />`
+* This is a child component representing a single todo item.
+* `todo={todo}` passes the data for that todo to the component.
+* `onToggle={toggleTodo}` passes a function so the item can be marked complete/incomplete.
 
+`key={todo.id}`
+* The key is a special prop in React.
+* It must be unique for each item in the list.
+* React uses it in its reconciliation process to figure out which items changed, were added, or removed.
+
+Why Keys Matter
+* Imagine a list of items like boxes in a moving truck.
+* Without keys, React doesn’t know which box is which. If one box moves, React might unnecessarily re-render all boxes instead of just the one that changed.
+* With keys, React can match each box to its previous position and only update what actually changed.
 
 
 
