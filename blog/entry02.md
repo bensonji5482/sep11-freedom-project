@@ -77,7 +77,7 @@ function NewTodo({ onAdd }) {
 }
 ```
 ### EDP
-
+I am currently on the stage of `changing things about the code I took to make it better` for a `to-do list project`. By `changing` stuff about the code I took from react.js, I can potentially `upgrade my code` to `slowly make it better` as I continue `using react.js` for `more things to test`. Basically probably `second` stage of EDP (didn't check the list).
 
 
 [Previous](entry01.md) | [Next](entry03.md)
