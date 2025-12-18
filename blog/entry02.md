@@ -2,7 +2,7 @@
 ##### 12/17/25
 
 ### New changes
-Previously I took some code from react.js
+Previously I took some code from react.js and with [this link](https://react.dev/learn/you-might-not-need-an-effect) I can access significant parts for my freedom project. Recently when I took this code all it could do was simply to show what is completed already and what isn't by simply checking a box and there is a space where you can type and add a task. Then I did make a small little tweak. Since I was work loaded on the week I am writing this I was only able to add some small things that had to do with Memo. The part that was added made it so that you can't simply just leave the typing part empty to add a empty task.
 ```js
 import { useState, useMemo, useCallback } from 'react';
 import { initialTodos, createTodo } from './todos.js';
