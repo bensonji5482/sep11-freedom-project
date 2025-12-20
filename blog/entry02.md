@@ -79,7 +79,8 @@ function NewTodo({ onAdd }) {
 ### EDP
 I am currently on the stage of `changing things about the code I took to make it better` for a `to-do list project`. By `changing` stuff about the code I took from react.js, I can potentially `upgrade my code` to `slowly make it better` as I continue `using react.js` for `more things to test`. Basically probably `second` stage of EDP (didn't check the list).
 
-### Takeaways
+### Skills I learned
+I learned to try and be more `observant` since I `need to look over` the tool `multiple times` since it is still hard to use. I also learned how to `manage my project`, because of my teacher I was able to learn how to do that since the `last year` I had this class. He taught us how to do blogs like the one I'm writing currently and had us take notes on lessons as well as letting us have our own time to learn our tools at a good pace. I also learned how to `strategize` which is a good asset for me because I think about `logic` and `how to do things properly` and `efficiently` into making my freedom project.
 
 
 [Previous](entry01.md) | [Next](entry03.md)
