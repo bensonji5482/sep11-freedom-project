@@ -210,8 +210,24 @@ Why Keys Matter
 * Without keys, React doesn’t know which box is which. If one box moves, React might unnecessarily re-render all boxes instead of just the one that changed.
 * With keys, React can match each box to its previous position and only update what actually changed.
 
+### 1/9/2026 Day 7
+#### `TodoList` component (ternary operator)
+```js
+const TodoList = ({ todos, filter }) => {
+```
+* Receives a `todos` array (and a `filter`, though it’s not used here).
+   * What it does:
+      * If there are no todos (`todos.length === 0`)
+         * → Displays:
+```js
+No todos yet! Add some tasks.
+```
+* If there are todos
+   * → Displays a `<ul>` list where:
+     * Each todo is rendered using a `<TodoItem />` component
+     * `key={todo.id}` helps React track list items efficiently
 
-
+#### `TodoStats` component (`&&` operator)
 
 
 
