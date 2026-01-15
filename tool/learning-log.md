@@ -228,7 +228,23 @@ No todos yet! Add some tasks.
      * `key={todo.id}` helps React track list items efficiently
 
 #### `TodoStats` component (`&&` operator)
+```js
+const TodoStats = ({ todos }) => {
+```
+* Receives the same `todos` array.
 
+What it does:
+   * Counts how many todos are completed:
+```js
+const completedCount = todos.filter(t => t.completed).length;
+```
+
+   * Only shows a message if at least one todo is completed:
+```js
+{completedCount > 0 && (
+  <p>Great job! You've completed {completedCount} tasks.</p>
+)}
+```
 
 
 
