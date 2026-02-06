@@ -62,10 +62,122 @@ const [filter, setFilter] = useState('all');
 What this code did to help my todo list was that it improved some of the functionalitys of the todo list such as, fixing the checkboxes from active only to 3 different sections. All, completed and active. Another functionality that was fixed from the todo list was being able to toggle whether if the item is done or able to be deleted. Another functionality it fixed was the dervived state which only had active but now it also has completed.
 
 ### EDP
-Using [this link](https://hstatsep.github.io/students/) here, I am able to check what process I am at. Simple click on EDP on the page to access it. Right now I am on the process 3-7, as I am just adding and testing the code repeatedly until I get the results that I want from it and I am still tryiing to work on making it more and more better.
+Using [this link](https://hstatsep.github.io/students/) here, I am able to check what process I am at. Simple click on EDP on the page to access it. Right now I am on the process 3-7, as I am just adding and testing the code repeatedly until I get the results that I want from it and I am still tryiing to work on making it more and more better. By making it more better I mean like trying to `add more new features` or just trying to `fix some bugs that still occur.
 
 ### Takeaways
 I learned to `persevere` by continuing to make the code better and better even though it is not the results I like. I also learned to `take my time` because I always panic when I think that I don't have time to finish the freedom project but by taking my time, I realized that I have lots of time to edit and change th code to insert it into my freedom project with some HTML and CSS.
+
+### The whole code that I have currently
+```js
+import { useState, useMemo, useCallback } from 'react';
+import { initialTodos, createTodo } from './todos.js';
+
+export default function TodoList() {
+  const [todos, setTodos] = useState(initialTodos);
+  const [filter, setFilter] = useState('all'); // NEW
+
+  // NEW: derived state
+  const activeTodos = useMemo(
+    () => todos.filter(todo => !todo.completed),
+    [todos]
+  );
+
+  const completedTodos = useMemo(
+    () => todos.filter(todo => todo.completed),
+    [todos]
+  );
+
+  // NEW: dynamic filtering
+  const visibleTodos = useMemo(() => {
+    if (filter === 'active') return activeTodos;
+    if (filter === 'completed') return completedTodos;
+    return todos;
+  }, [filter, todos, activeTodos, completedTodos]);
+
+  // NEW: stable add handler
+  const handleAddTodo = useCallback(
+    (text) => {
+      setTodos(prevTodos => [...prevTodos, createTodo(text)]);
+    },
+    []
+  );
+
+  // NEW: toggle completed
+  const handleToggleTodo = useCallback((id) => {
+    setTodos(prevTodos =>
+      prevTodos.map(todo =>
+        todo.id === id
+          ? { ...todo, completed: !todo.completed }
+          : todo
+      )
+    );
+  }, []);
+
+  // NEW: delete todo
+  const handleDeleteTodo = useCallback((id) => {
+    setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id));
+  }, []);
+
+  return (
+    <>
+      {/* NEW: filter controls */}
+      <div>
+        <button onClick={() => setFilter('all')} disabled={filter === 'all'}>All</button>
+        <button onClick={() => setFilter('active')} disabled={filter === 'active'}>Active</button>
+        <button onClick={() => setFilter('completed')} disabled={filter === 'completed'}>Completed</button>
+      </div>
+
+      <NewTodo onAdd={handleAddTodo} />
+
+      <ul>
+        {visibleTodos.map(todo => (
+          <li key={todo.id}>
+            {/* NEW: toggle */}
+            <span
+              onClick={() => handleToggleTodo(todo.id)}
+              style={{ cursor: 'pointer' }}
+            >
+              {todo.completed ? <s>{todo.text}</s> : todo.text}
+            </span>
+
+            {/* NEW: delete */}
+            <button onClick={() => handleDeleteTodo(todo.id)} style={{ marginLeft: '8px' }}>
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+
+      <footer>
+        {activeTodos.length} todos left
+      </footer>
+    </>
+  );
+}
+
+function NewTodo({ onAdd }) {
+  const [text, setText] = useState('');
+
+  function handleAddClick() {
+    if (!text.trim()) return;
+    onAdd(text);
+    setText('');
+  }
+
+  return (
+    <>
+      <input
+        value={text}
+        onChange={e => setText(e.target.value)}
+        placeholder="New todo"
+      />
+      <button onClick={handleAddClick}>
+        Add
+      </button>
+    </>
+  );
+}
+```
 
 
 [Previous](entry02.md) | [Next](entry04.md)
