@@ -11,24 +11,24 @@
 - [ ] Creating a program where you can interact with it by adding or deleting tasks based on what you type or check off using HTML, CSS, JS, and my tool react js.
 
 ##### HTML and CSS
-- [ ] Outline for the to-do list using HTML (3/2)
-  - [ ] The boxes in the outline (2/16)
-  - [ ] Button to add a task (2/17)
-  - [ ] Input text box for tasks (2/18)
-  - [ ] Sections ‘All, Active and Completed’ (2/23)
-  - [ ] # of task counter, doesn't work yet (2/24)
-  - [ ] Put some text into the boxes (2/25)
-  - [ ] Colors to the program (3/2 or 4/13 if I have time)
+- [ ] Outline for the to-do list using HTML (3/4)
+  - [ ] The boxes in the outline (2/23)
+  - [ ] Button to add a task (2/24)
+  - [ ] Input text box for tasks (2/25)
+  - [ ] Sections ‘All, Active and Completed’ (2/30)
+  - [ ] # of task counter, doesn't work yet (2/31)
+  - [ ] Put some text into the boxes (3/2)
+  - [ ] Colors to the program (3/4 or 4/13 if I have time)
   - [ ] Add delete button task (3/8)
 
 ##### JS
 - [ ] Add the features using js and react js (4/13)
-  - [ ] Make the add task button work (3/3)
-    - [ ] Also keypress enter button work (3/4)
+  - [ ] Make the add task button work (3/9)
+    - [ ] Also keypress enter button work (3/11)
   - [ ] Make entered task able to be displayed (3/16)
-  - [ ] Make delete task button work (3/18)
-  - [ ] Add checkboxes on tasks to mark it (3/23)
-  - [ ] Make sections have tasks that are marked (3/30)
+  - [ ] Make delete task button work (3/23)
+  - [ ] Add checkboxes on tasks to mark it (3/25)
+  - [ ] Make sections have tasks that are marked (3/31)
   - [ ] Add react js into the code (4/13)
      
 #### Beyond MVP
