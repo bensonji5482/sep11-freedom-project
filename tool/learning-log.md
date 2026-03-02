@@ -245,10 +245,19 @@ const completedCount = todos.filter(t => t.completed).length;
   <p>Great job! You've completed {completedCount} tasks.</p>
 )}
 ```
+### 3/2/2026 : Day 8
+Part 1: `useLocalStorage` Hook
+```js
+function useLocalStorage(key, initialValue)
+```
+This function acts like `useState`, but with localStorage persistence built in.
 
-
-
-
+Step-by-step:
+1. It creates state
+```js
+const [value, setValue] = useState(() => {
+```
+Instead of immediately setting initialValue, it runs a function first.
 
 
 
