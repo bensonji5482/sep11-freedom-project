@@ -259,12 +259,37 @@ const [value, setValue] = useState(() => {
 ```
 Instead of immediately setting initialValue, it runs a function first.
 
+That function:
+```js
+const item = window.localStorage.getItem(key);
+return item ? JSON.parse(item) : initialValue;
+```
+What this does:
+* Checks if something already exists in `localStorage` under the given `key`
+* If it exists → convert it from JSON back into a JavaScript value
+* If it doesn’t exist → use the provided `initialValue`
 
+So:
+* First time opening the app → uses `initialValue`
+* After refresh → loads saved data from localStorage
 
+2. It creates a custom setter
+```js
+const setStoredValue = (newValue) => {
+  setValue(newValue);
+  window.localStorage.setItem(key, JSON.stringify(newValue));
+};
+```
+This does TWO things:
+* Updates React state
+* Saves the new value to localStorage
 
-
-
-
+Important:
+localStorage can only store strings, so it uses:
+```js
+JSON.stringify(newValue)
+```
+to convert arrays/objects into strings.
 
 
 
