@@ -291,9 +291,32 @@ JSON.stringify(newValue)
 ```
 to convert arrays/objects into strings.
 
+3. It returns the state and setter
+```js
+return [value, setStoredValue];
+```
+Just like `useState` returns:
+```js
+[state, setState]
+```
+So this custom hook behaves exactly like useState — but persistent.
 
+Part 2: Using It in TodoApp
+```js
+const [todos, setTodos] = useLocalStorage('todos', []);
+```
+This means:
+* Store todos under the key `"todos"` in localStorage
+* Default value is an empty array `[]`
 
-
+Now whenever you:
+```js
+setTodos(newTodos)
+```
+React:
+* Updates the UI
+* Saves the todos to localStorage
+So when the page refreshes, your todos are still there :)
 
 
 
