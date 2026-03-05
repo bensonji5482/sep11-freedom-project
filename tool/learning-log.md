@@ -316,6 +316,7 @@ setTodos(newTodos)
 React:
 * Updates the UI
 * Saves the todos to localStorage
+
 So when the page refreshes, your todos are still there :)
 
 
