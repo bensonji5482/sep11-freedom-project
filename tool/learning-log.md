@@ -319,7 +319,18 @@ React:
 
 So when the page refreshes, your todos are still there :)
 
+In Simple Terms -->
 
+This hook:
+* Works like useState
+* Automatically saves data to localStorage
+* Automatically loads saved data on refresh
+
+It turns this:
+```js
+const [todos, setTodos] = useState([]);
+```
+into a persistent version that survives page reloads.
 
 
 
