@@ -1,7 +1,7 @@
 # Entry 4
-##### X/X/XX
+##### 3/9/2026
 
-Text
+### Context
 
 [Previous](entry03.md) | [Next](entry05.md)
 
