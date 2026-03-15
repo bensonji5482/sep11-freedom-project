@@ -57,7 +57,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const remainingTasks = document.getElementById('remaining-tasks');
 ```
 
-###
+### Skills I learned
+So far I feel like I have learned basically what `I need to do in my to-do list code and my tool` that I will eventually encorporate into my code later. Due to some testings I was able to `make it better and better` throughout the process of making the outline of the to-do list. Overall I felt like I had gotten better at my `organization skill` being able to make the code look good and more organized.
 
 
 
