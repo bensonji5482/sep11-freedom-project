@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
 ```
 
 ### Skills I learned
-So far I feel like I have learned basically what `I need to do in my to-do list code and my tool` that I will eventually encorporate into my code later. Due to some testings I was able to `make it better and better` throughout the process of making the outline of the to-do list. Overall I felt like I had gotten better at my `organization skill` being able to make the code look good and more organized.
+So far I feel like I have learned basically what `I need to do in my to-do list code and my tool` that I will eventually encorporate into my code later. Due to some testings I was able to `make it better and better` throughout the process of making the outline of the to-do list. Overall I felt like I had gotten better at my `organization skill` being able to make the code look good and more organized. The reason that I did so much testing was because I felt like I needed to finish this very quickly but I then realized that I still had a whole month left of time before the MVP is due s I learned that from this point on I could just `take my time` into doing the to-do list without any constraints.
 
 
 
