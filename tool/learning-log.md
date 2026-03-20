@@ -332,9 +332,32 @@ const [todos, setTodos] = useState([]);
 ```
 into a persistent version that survives page reloads.
 
+### 3/16/2026 : Day 9
+1. `todoReducer` (the logic)
+This function controls how the state changes based on actions.
+* It takes:
+   * `state` → current list of todos
+   * `action` → an object describing what to do
+Cases:
+* `ADD_TODO`
+   * Adds a new todo to the list
+   * Creates an object:
+```js
+{
+  id: Date.now(),     // unique ID
+  text: action.text,  // what user typed
+  completed: false    // starts incomplete
+}
+```
+* `TOGGLE_TODO`
+   * Finds the todo with matching `id`
+   * Flips `completed` between `true` and `false`
+* `DELETE_TODO`
+   * Removes the todo with the given `id`
+* `default`
+   * If action type is unknown → return state unchanged
 
-
-
+2. `useReducer` in `TodoApp`
 
 
 
