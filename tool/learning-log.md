@@ -358,9 +358,23 @@ Cases:
    * If action type is unknown → return state unchanged
 
 2. `useReducer` in `TodoApp`
+```js
+const [todos, dispatch] = useReducer(todoReducer, []);
+```
+* `todos` → current state (array of todos)
+* `dispatch` → function used to send actions to the reducer
+* `[]` → initial state (empty list)
 
-
-
+3. Action functions
+These are helper functions that send actions
+* Add a todo
+```js
+dispatch({ type: 'ADD_TODO', text });
+```
+* Toggle a todo
+```js
+dispatch({ type: 'TOGGLE_TODO', id });
+```
 
 
 
