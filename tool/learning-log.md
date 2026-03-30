@@ -376,6 +376,100 @@ dispatch({ type: 'ADD_TODO', text });
 dispatch({ type: 'TOGGLE_TODO', id });
 ```
 
+### 3/23/2026
+After combining everything from day 2 to day 9 of every code snippet plus one I wouldn't really get to cover which is about `complex state logic` I now have a full completed integrated example to use in my freedom project.
+```js
+import React, { useState, useEffect } from 'react';
+
+const TodoApp = () => {
+  // STATE MANAGEMENT
+  const [todos, setTodos] = useState([]);
+  const [inputText, setInputText] = useState('');
+  const [filter, setFilter] = useState('all');
+
+  // SIDE EFFECTS
+  useEffect(() => {
+    const saved = localStorage.getItem('todos');
+    if (saved) setTodos(JSON.parse(saved));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
+
+  // EVENT HANDLERS
+  const addTodo = () => {
+    if (inputText.trim()) {
+      setTodos([...todos, {
+        id: Date.now(),
+        text: inputText,
+        completed: false
+      }]);
+      setInputText('');
+    }
+  };
+
+  const toggleTodo = (id) => {
+    setTodos(todos.map(todo =>
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    ));
+  };
+
+  // COMPUTED VALUES
+  const filteredTodos = todos.filter(todo => {
+    if (filter === 'active') return !todo.completed;
+    if (filter === 'completed') return todo.completed;
+    return true;
+  });
+
+  return (
+    <div>
+      {/* INPUT SECTION */}
+      <input
+        value={inputText}
+        onChange={(e) => setInputText(e.target.value)}
+        onKeyPress={(e) => e.key === 'Enter' && addTodo()}
+      />
+      <button onClick={addTodo}>Add</button>
+
+      {/* FILTER BUTTONS */}
+      {['all', 'active', 'completed'].map(f => (
+        <button
+          key={f}
+          onClick={() => setFilter(f)}
+          style={{ fontWeight: filter === f ? 'bold' : 'normal' }}
+        >
+          {f}
+        </button>
+      ))}
+
+      {/* LIST RENDERING */}
+      <div>
+        {filteredTodos.map(todo => (
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            onToggle={toggleTodo}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// COMPONENT COMPOSITION
+const TodoItem = ({ todo, onToggle }) => (
+  <div style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
+    <input
+      type="checkbox"
+      checked={todo.completed}
+      onChange={() => onToggle(todo.id)}
+    />
+    {todo.text}
+  </div>
+);
+```
+This would be my full example of using my tool react js into my freedeom project.
 
 
 
