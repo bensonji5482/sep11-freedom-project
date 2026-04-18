@@ -46,7 +46,8 @@ On the list of EDP stages I am currently on the 7th stage of improving bugs that
 ```
 This is basically the first thing that I did in my plan that helped out the most out of all the parts that I did in my code because the HTML made the CSS and the JS part of my to-do list possible and most efficient.
 
-### 
+### Skills that I learned
+The skills that I learned from this was being able to `plan things out more efficiently` because by having a outline made, I can see how it looks like and try to tweak the looks or the functions by basically adding or deleting some of my code as well as making some colors for it to look decent. The other skill that I learned is 
 
 [Previous](entry04.md) | [Next](entry06.md)
 
