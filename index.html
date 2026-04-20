@@ -118,11 +118,12 @@
 
             .todo-item {
                 display: flex;
-                align-items: center;
+                align-items: flex-start;
                 padding: 15px;
                 border-radius: 6px;
                 margin-bottom: 10px;
                 border-left: 4px solid #667eea;
+                gap: 10px;
             }
 
             .todo-item.completed {
@@ -142,6 +143,9 @@
             .todo-text {
                 flex: 1;
                 font-size: 16px;
+                min-width: 0;
+                word-break: break-word;
+                overflow-wrap: anywhere;
             }
 
             .delete-btn {
