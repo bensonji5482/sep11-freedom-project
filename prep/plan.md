@@ -32,8 +32,9 @@
   - [ ] Add react js into the code (4/13)
      
 #### Beyond MVP
-- [ ] Possibly add bootstrap
-
+- [ ] Find and fix some possible bugs
+- [ ] Potentially integrate bootstrap
+- [ ] Add set time and notifications (maybe)
 
 
 <!-- EXAMPLE
